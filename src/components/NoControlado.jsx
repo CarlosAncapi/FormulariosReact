@@ -1,10 +1,16 @@
+import { useRef } from "react";
+
 const NoControlado = () => {
-    const handleSubmit = (e) =>{
+
+    const form = useRef(null)
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("me diste click")
+        console.log("me diste click");
+        console.log(form.current);
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} ref={form}>
             <input 
                 type="text" 
                 placeholder="Igresa todo" 
