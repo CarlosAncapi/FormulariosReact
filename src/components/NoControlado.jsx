@@ -6,8 +6,13 @@ const NoControlado = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("me diste click");
-        console.log(form.current);
+        
+        const data = new FormData(form.current);
+        console.log([...data.entries()]);
+
+        const {title, description, state} = Object.fromEntries([...data.entries()])
+        
+        console.log(title, description, state)
     }
     return (
         <form onSubmit={handleSubmit} ref={form}>
@@ -16,15 +21,19 @@ const NoControlado = () => {
                 placeholder="Igresa todo" 
                 className="form-control mb-2"
                 name="title"
+                defaultValue="todo #01"
             />
             <textarea 
                 className="form-control mb-2" 
                 placeholder="Ingrese descripcion"
                 name="description"
+                defaultValue="descripcion #01"
             />
             <select 
                 className="form-select mb-2" 
-                name="state">
+                name="state"
+                defaultValue="completado"
+            >
                     <option  value="pendiente">Pendiente</option>
                     <option  value="completado">Completado</option>
             </select>
