@@ -16,9 +16,13 @@ const Controlado = () => {
     };
 
     const handleChange = e => {
+        //e => setTodo({...todo, priority: e.target.checked})
         setTodo({
             ...todo,
-            [e.target.name]: e.target.value
+            [e.target.name]: 
+                    e.target.type === "checkbox"
+                        ? e.target.checked
+                        : e.target.value
         })
 
     }
@@ -47,7 +51,7 @@ const Controlado = () => {
                     className="form-check-input"
                     id="inputCheck"
                     checked={todo.priority}
-                    onChange={e => setTodo({...todo, priority: e.target.checked})}
+                    onChange={handleChange}
                 />
                 <label htmlFor="inputCheck">Dar prioridad</label>
             </div>
