@@ -9,20 +9,21 @@ const Controlado = () => {
         priority: true
     });
 
+    const {title, description, state, priority} = todo;
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(todo.title, todo.description, todo.state);
+        console.log(title, description, state);
         
     };
 
     const handleChange = e => {
-        //e => setTodo({...todo, priority: e.target.checked})
+        
+        const {name, type, checked, value} = e.target
+
         setTodo({
             ...todo,
-            [e.target.name]: 
-                    e.target.type === "checkbox"
-                        ? e.target.checked
-                        : e.target.value
+            [name]: type === "checkbox" ? checked : value
         })
 
     }
@@ -34,14 +35,14 @@ const Controlado = () => {
                 placeholder="Igresa todo" 
                 className="form-control mb-2"
                 name="title"
-                value={todo.title}
+                value={title}
                 onChange={handleChange}
             />
             <textarea 
                 className="form-control mb-2" 
                 placeholder="Ingrese descripcion"
                 name="description"
-                value={todo.description}
+                value={description}
                 onChange={handleChange}
             />
             <div className="form-check mb-2">
@@ -50,7 +51,7 @@ const Controlado = () => {
                     name="priority"
                     className="form-check-input"
                     id="inputCheck"
-                    checked={todo.priority}
+                    checked={priority}
                     onChange={handleChange}
                 />
                 <label htmlFor="inputCheck">Dar prioridad</label>
@@ -58,7 +59,7 @@ const Controlado = () => {
             <select 
                 className="form-select mb-2" 
                 name="state"
-                value={todo.state}
+                value={state}
                 onChange={handleChange}
             >
                     <option  value="pendiente">Pendiente</option>
