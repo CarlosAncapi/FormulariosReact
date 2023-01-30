@@ -5,7 +5,8 @@ const Controlado = () => {
     const [todo,setTodo] = useState({
         title: 'Todo #01',
         description: 'Description #01',
-        state: 'pendiente'
+        state: 'pendiente',
+        priority: true
     });
 
     const handleSubmit = (e) => {
@@ -39,6 +40,17 @@ const Controlado = () => {
                 value={todo.description}
                 onChange={handleChange}
             />
+            <div className="form-check mb-2">
+                <input 
+                    type="checkbox" 
+                    name="priority"
+                    className="form-check-input"
+                    id="inputCheck"
+                    checked={todo.priority}
+                    onChange={e => setTodo({...todo, priority: e.target.checked})}
+                />
+                <label htmlFor="inputCheck">Dar prioridad</label>
+            </div>
             <select 
                 className="form-select mb-2" 
                 name="state"
