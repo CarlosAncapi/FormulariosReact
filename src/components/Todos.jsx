@@ -15,7 +15,7 @@ const Todos = ({todos, deleteTodo, updateTodo}) => {
                     ))}
                     {
                         todos.length === 0 && (
-                        <li className="list-group-item text-center">Sin Tareas pendientes</li>
+                        <li className="list-group-item text-center">Sin Tareas</li>
                         )
                     }
             </ul>

@@ -85,7 +85,7 @@ const Formulario = ({addTodo}) => {
                 onChange={handleChange}
             >
                     <option  value="pendiente">Pendiente</option>
-                    <option  value="completado">Completado</option>
+                    <option  value="completada">Completada</option>
             </select>
             <button 
                 type="submit"
