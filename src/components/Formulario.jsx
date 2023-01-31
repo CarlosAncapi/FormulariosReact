@@ -33,7 +33,7 @@ const Formulario = ({addTodo}) => {
         return Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Tarea agregado correctamente!!',
+            title: 'Tarea agregada correctamente!!',
             showConfirmButton: false,
             timer: 1500
         })
