@@ -39,7 +39,7 @@ const App = () => {
   }
   return (
     <div className="container mb-2"> 
-    <h1 className="my-5">Formularios</h1>
+    <h1 className="my-5 text-center">Formulario de nueva tarea</h1>
       <Formulario addTodo={addTodo}/>
       <Todos 
         todos={orderTodo(todos)} 

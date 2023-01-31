@@ -3,7 +3,7 @@ import Todo from "./Todo";
 const Todos = ({todos, deleteTodo, updateTodo}) => {
     return (
         <div className="mt-5">
-            <h2 className="text-center mb-5">Todos</h2>
+            <h2 className="text-center mb-5">Listado de tareas</h2>
             <ul className="list-group">
                 {todos.map((todo) => (
                         <Todo 
@@ -15,7 +15,7 @@ const Todos = ({todos, deleteTodo, updateTodo}) => {
                     ))}
                     {
                         todos.length === 0 && (
-                        <li className="list-group-item text-center">Sin Todos</li>
+                        <li className="list-group-item text-center">Sin Tareas pendientes</li>
                         )
                     }
             </ul>

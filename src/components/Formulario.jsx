@@ -4,8 +4,8 @@ import Swal from 'sweetalert2';
 const Formulario = ({addTodo}) => {
 
     const [todo,setTodo] = useState({
-        title: 'Todo #01',
-        description: 'Description #01',
+        title: 'Tarea #01',
+        description: 'Descripcion #01',
         state: 'pendiente',
         priority: true
     });
@@ -33,7 +33,7 @@ const Formulario = ({addTodo}) => {
         return Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Todo agregado correctamente!!',
+            title: 'Tarea agregado correctamente!!',
             showConfirmButton: false,
             timer: 1500
         })
@@ -54,7 +54,7 @@ const Formulario = ({addTodo}) => {
         <form onSubmit={handleSubmit} >
             <input 
                 type="text" 
-                placeholder="Igresa todo" 
+                placeholder="Ingresa titulo de la tarea" 
                 className="form-control mb-2"
                 name="title"
                 value={title}
@@ -62,7 +62,7 @@ const Formulario = ({addTodo}) => {
             />
             <textarea 
                 className="form-control mb-2" 
-                placeholder="Ingrese descripcion"
+                placeholder="Ingrese descripcion de la tarea"
                 name="description"
                 value={description}
                 onChange={handleChange}
@@ -90,7 +90,7 @@ const Formulario = ({addTodo}) => {
             <button 
                 type="submit"
                 className="btn btn-primary">
-                    Agregar Todo
+                    Agregar Tarea
             </button>
         </form>
     )
